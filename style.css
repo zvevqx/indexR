@@ -146,3 +146,8 @@ ul.items li.item:hover .downloadBtn{
 	background: url('icons/vid.png') center center no-repeat ;
 	background-size: 70%;
 }
+
+.folder{
+	background: url('icons/folder.png') center center no-repeat ;
+	background-size: 70%;
+}

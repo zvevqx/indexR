@@ -24,20 +24,30 @@
 			 </div>
 		 	<div class="spacer"></div>
 		 	<?php 
-			$dir = $base_dir  = __DIR__ ;
+			$dir = getcwd();
+			echo $dir . '<br>';
 			$files1 = scandir($dir);
 
 			$content = '<ul class="items">';
 			foreach ($files1 as  $file) {
-				$fileTypeIcon = rand(0,2);
-					if($fileTypeIcon==0){
-						$fileTypeIcon = 'typeImg';
-					}else if($fileTypeIcon==1){
-						$fileTypeIcon = 'typeVid';
-					}else if($fileTypeIcon==2){
-						$fileTypeIcon= 'typeSrc';
-					}
-				$content .= '<li class="item"><a href="'.'"><span class="'.$fileTypeIcon.' fileType "></span>'.$file.'</a><div class="downloadBtn"><a href="#"></a></div></li>';
+
+					$fileTypeIcon = 'typeImg';
+					$fileTypeIcon = 'typeVid';
+				  	$fileTypeIcon= 'typeSrc';
+				$link = ''.$file;
+				
+				if ($file == '.'|| $file == 'icons'){continue;}
+
+				if(is_dir($file) == false){ 
+					$ext = explode('.', $file);
+					$ext = end($ext);
+					print($ext.'<br>');
+				}else {
+					$fileTypeIcon = 'folder';
+				};
+
+
+				$content .= '<li class="item"><a href="'.$link.'"><span class="'.$fileTypeIcon.' fileType "></span>'.$file.'</a><div class="downloadBtn"><a href="#"></a></div></li>';
 			}
 			$content .= '</ul>';
 			echo $content;
