@@ -26,12 +26,13 @@ $path = $baseUrl;
  <head>
  	<title>INDEXR</title>
  	<link rel="stylesheet" type="text/css" href="style.css">
+ 	<link rel="stylesheet" type="text/css" href="icons/style.css">
  	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700,800' rel='stylesheet' type='text/css'>
  </head>
 
 	 <body>
 		 <header>
-			 <span class="rtnBtn"><a href="javascript:history.go(-1)"></a></span>
+			 <span class="icon-rewind rtnBtn"><a href="javascript:history.go(-1)"></a></span>
 		 	<h1>HELLO SICK SAD WORLD</h1> 
 		 	<h2><?php  echo $path  ?></h2>
 		 </header>
@@ -95,7 +96,7 @@ function fileIndexr( $pathToScan , $excludeList , $rootFolder){
 
 				$fileTypeIcon = 'typeImg';
 				$fileTypeIcon = 'typeVid';
-				$fileTypeIcon= 'typeSrc';
+				$fileTypeIcon= 'icon-paper';
 
 				
 				if(is_dir($fileAbsolutPath) == FALSE){
@@ -103,14 +104,14 @@ function fileIndexr( $pathToScan , $excludeList , $rootFolder){
 					$ext = end($ext);
 					$isFolder=FALSE;
 				} else {
-					$fileTypeIcon = 'folder';
+					$fileTypeIcon = 'icon-folder';
 					$dirVal ="$file";
 					$isFolder=TRUE;
 				};
 				if ($isFolder==TRUE){
-					$content.='<td class="name"><span class="'.$fileTypeIcon.' fileType "></span> <a href="?o='.$actualFolder.'/'.$file.'">'.$file.'</a></td>';
+					$content.='<td class="name"><span class="'.$fileTypeIcon.' "></span> <a href="?o='.$actualFolder.'/'.$file.'">'.$file.'</a></td>';
 				} else {
-					$content.='<td class="name"><span class="'.$fileTypeIcon.' fileType "></span> <a href="'.$fileAbsolutPath.'">'.$file.'</a></td>';
+					$content.='<td class="name"><span class="'.$fileTypeIcon.' "></span> <a href="'.$fileAbsolutPath.'">'.$file.'</a></td>';
 				}
 
 				$content.='<td class="date">'.$lastMod.'</td>';
@@ -119,7 +120,7 @@ function fileIndexr( $pathToScan , $excludeList , $rootFolder){
 				if ($isFolder==TRUE){
 					$content.='<td class="dl"></td>';
 				} else {
-					$content.='<td class="dl"><div class="downloadBtn"><a href="'.$fileAbsolutPath.'"></a></div> </td>';
+					$content.='<td class="dl"><span class="icon-inbox"><a href="'.$fileAbsolutPath.'"></a></span>  </td>';
 				}
 				$content.='</tr>';
 			}

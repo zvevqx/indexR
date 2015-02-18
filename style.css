@@ -50,32 +50,14 @@ h2{
 }
 /*CONTENT STYLE*/
 
-.rtnBtn a{
+.rtnBtn{
 	display: inline-block;
-	width: 50px;
-	height: 60px;
-	background: url('icons/back.png') center center no-repeat ;
-	background-size: 70%;
+	color: #fff;
+	font-size: 54px;
 	margin-left: 15px;
 }
 
-.downloadBtn{
-	background: url('icons/dl.png') center center no-repeat;
-	position: absolute;
-	background-size: 50%;
-	width: 100%;
-	height: 100%;
-	display: inline-block;
-	top:0;
-	right: 0px;
-	border:none;
-	transition: all 0.3s ease;
-}
-.downloadBtn a {
-	display: block;
-	width: 100%;
-	height:100%;
-}
+
 
 .container {
 	max-width: 1000px;
@@ -131,7 +113,7 @@ table{
 }
 
 .fileList td.name{
-	padding-left: 50px;
+	padding-left: 20px;
 	position: relative;
 }
 
@@ -159,37 +141,6 @@ table{
 
 .fileList tr:nth-child(odd){ background-color:#ecf0f1; }
 .fileList tr:nth-child(even){ background-color:#ffffff; }
-
-
-.fileType{
-	position: absolute;
-	width: 35px;
-	height: 100%;
-	display: block;
-	top:0;
-	left: 5px;
-}
-
-.typeImg{
-	background: url('icons/img.png') center center no-repeat ;
-	background-size: 70%;
-}
-
-.typeSrc{
-	background: url('icons/src.png') center center no-repeat ;
-	background-size: 70%;
-}
-
-.typeVid{
-	background: url('icons/vid.png') center center no-repeat ;
-	background-size: 70%;
-}
-
-.folder{
-	background: url('icons/folder.png') center center no-repeat ;
-	background-size: 70%;
-}
-
 
 .empty {
 	font-size: 36px;
