@@ -2,7 +2,7 @@
 # indexR
 php script for easy file indexing 
 
-juste drop indexr.php and icons/ folder in your archive folder 
+juste drop indexr.php , style.css and icons/ folder in your archive folder 
 edit indexr.php and set url for your folder / and description 
 
 go to /yoururl/foldeeyouchoosetoputscript/indexr.php
